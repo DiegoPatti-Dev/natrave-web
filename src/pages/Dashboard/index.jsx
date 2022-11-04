@@ -3,8 +3,8 @@ import { Navigate } from 'react-router-dom'
 import { useLocalStorage, useAsyncFn } from 'react-use'
 import axios from 'axios'
 import { format, formatISO } from 'date-fns'
-import { Fragment } from 'react'
 import { Icon, Card, DateSelect } from '~/components'
+import { hunches } from '../../../../api/api/users'
 
 
 export const Dashboard = () => {
@@ -57,7 +57,7 @@ export const Dashboard = () => {
   }
 
   return (
-    <Fragment>
+    <>
 
       <header className="bg-red-500 text-white">
         <div className="container  max-w-3xl flex justify-between p-4">
@@ -91,8 +91,8 @@ export const Dashboard = () => {
                 homeTeam={game.homeTeam}
                 awayTeam={game.awayTeam}
                 gameTime={format (new Date (game.gameTime), 'H:mm')}
-                homeTeamScore={hunches?.value?.[game.id]?.homeTeamScore || ''}
-                awayTeamScore={hunches?.value?.[game.id]?.awayTeamScore || ''}
+                homeTeamScore={hunches?.value?.[game.id]?.homeTeamScore || '0'}
+                awayTeamScore={hunches?.value?.[game.id]?.awayTeamScore || '0'}
               />
             ))}
 
@@ -101,6 +101,6 @@ export const Dashboard = () => {
         </section>
       </main>
 
-    </Fragment>
+    </>
   )
 }

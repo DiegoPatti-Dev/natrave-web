@@ -25,7 +25,19 @@ export const Signup = () => {
         data: values
       })
 
-      console.log(res.data)
+      localStorage.setItem('auth', JSON.stringify(res.data))
+
+      const reslog = await axios ({
+        method: 'get',
+        baseURL: import.meta.env.VITE_API_URL,
+        url:'/login',
+        auth: {
+          username: values.email,
+          password: values.password
+        }
+      })
+
+      setAuth(reslog.data)
 
     },
     initialValues: {
@@ -38,7 +50,7 @@ export const Signup = () => {
   })
 
   if (auth?.user?.id) {
-    return <Navigate to="/dashboard" replace={true} />
+    return <Navigate to="/login" replace={true} />
   }
 
   return (
