@@ -4,7 +4,6 @@ import { useLocalStorage, useAsyncFn } from 'react-use'
 import axios from 'axios'
 import { format, formatISO } from 'date-fns'
 import { Icon, Card, DateSelect } from '~/components'
-import { hunches } from '../../../../api/api/users'
 
 
 export const Dashboard = () => {

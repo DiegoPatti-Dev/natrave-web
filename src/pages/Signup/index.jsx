@@ -50,7 +50,7 @@ export const Signup = () => {
   })
 
   if (auth?.user?.id) {
-    return <Navigate to="/login" replace={true} />
+    return <Navigate to="/dashboard" replace={true} />
   }
 
   return (
