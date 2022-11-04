@@ -43,8 +43,6 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
         <img src={`/imgs/flags/${homeTeam}.png`} />
 
         <input
-          max="12"
-          min="0"
           className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-700 text-xl text-center' 
           type="number" 
           name="homeTeamScore" 
@@ -55,8 +53,6 @@ export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, away
         />
         <span className='text-red-500 font-bold'>X</span>
         <input
-          max="12"
-          min="0"
           className='bg-red-300/[0.2] w-[55px] h-[55px] text-red-700 text-xl text-center' 
           type="number" 
           name="awayTeamScore" 
